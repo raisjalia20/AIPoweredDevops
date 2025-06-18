@@ -1,0 +1,260 @@
+What is Infrastructure?
+Infrastructure refers to the essential resources and services required to run a company or a project. These include both hardware and software systems that support computing environments.
+
+Components of Infrastructure:
+==============================
+
+Servers – Physical or virtual machines that run applications.
+
+Database – Systems used to store and manage data (e.g., MySQL, PostgreSQL).
+
+Storage – Persistent data storage (e.g., disks, cloud buckets).
+
+Security – Firewalls, authentication, access control, etc.
+
+Monitoring – Tools to observe performance, errors, uptime (e.g., Prometheus, Grafana).
+
+Network – Connectivity infrastructure (LAN, VPN, cloud VPC, etc.).
+---------------------------------------------------------
+
+Types of Infrastructure:
+=========================
+
+On-Premise (Our Own Data Center)
+-----------------
+
+Hardware owned and managed by the organization.
+
+High control, but higher upfront costs and maintenance overhead.
+
+Cloud (Pay-As-You-Go Model)
+----------------------
+
+Infrastructure provided by cloud vendors (AWS, Azure, GCP, etc.).
+
+You pay only for what you use.
+
+Scalable, flexible, and lower maintenance.
+
+
+What is an Operating System (OS)?
+----------------------------------
+
+--> An Operating System (OS) is software that acts as a mediator between the user and the computer hardware.
+
+--> It allows users to interact with computers and run programs.
+
+--> Without an OS, we cannot use any computer system.
+
+--> It provides an environment (platform) for users to operate and manage hardware and software resources.
+
+🛠️ Examples of tasks enabled by an OS:
+Opening applications like Notepad, Calculator, Browsers, etc.
+
+Managing files, memory, and peripheral devices.
+
+🌐 Types of Operating Systems in the Market
+-----------------------------------------
+Common examples include:
+
+Windows
+
+Linux
+
+macOS
+
+Android
+
+iOS
+
+🪟 Windows Operating System
+----------------------------------
+
+Developed by Microsoft (Founded by Bill Gates)
+
+GUI-based (Graphical User Interface)
+
+Primarily a single-user OS
+
+Commercial OS – requires paid licenses
+
+Lower built-in security – anti-virus software is often necessary
+
+Best suited for personal or home use, such as:
+
+Playing games
+
+Watching movies
+
+Internet browsing
+
+Storing files
+
+Attending online classes
+
+❗ Note: Windows is not recommended for enterprise-level operations like application deployment or server hosting.
+-----------------------------------------------------------------
+🐧 Linux Operating System
+============================
+Community-developed, free, and open source
+
+Supports multi-user environments
+
+Offers high security
+
+CLI-based (Command Line Interface), though some distros have GUIs
+
+Highly recommended for:
+
+Servers
+
+Application deployment
+
+Infrastructure setup
+
+💡 In real-time IT environments, Linux is the OS of choice for infrastructure and DevOps operations.
+
+📜 History of Linux
+=======================
+Created by Linus Torvalds
+
+Initially used UNIX OS, but faced limitations and his feedback was not accepted
+
+He discovered Minix OS, which aligned more closely with his ideas
+
+Linus modified Minix and created Linux
+
+Name Origin:
+Lin(us) + Min(ux) = Linux
+========================
+
+🧬 Linux Distributions (Flavors)
+===================================
+
+After Linux was released as open source, many companies downloaded the source code and customized it to create their own versions, known as Linux Distributions.
+
+🔹 Popular Linux Distros:
+Amazon Linux
+
+Red Hat Enterprise Linux (RHEL)
+
+Ubuntu
+
+CentOS
+
+SUSE Linux
+
+There are over 200+ Linux distributions available today.
+
+✅ Summary
+What is an Operating System and why do we need it?
+
+Windows OS – GUI, single-user, commercial, for personal use
+
+Linux OS – CLI, multi-user, open source, secure, for enterprise use
+
+History of Linux – Linus Torvalds' journey from UNIX to Linux
+
+Linux Distributions – Various flavors developed from the base Linux kernel
+==============================================================================
+
+Install Git bash
+ 
+https://git-scm.com/downloads
+
+Install Mobaxterm(Optional and only for windows)
+
+https://mobaxterm.mobatek.net/download-home-edition.html
+
+Create a free tier AWS account (Video uploaded in course dashboard follow)
+
+=========================================================================
+
+Linux Files System
+-------------------
+==> Everything is represented as a file
+
+     1) Directory File (Folder) (starts with d)
+     2) Normal file/ ordinary ( starts with -)
+     3) Link File ( starts with l)
+
+
+Linux Commands 
+==============
+$ clear  --> To clear the screen
+
+$ mkdir telusko  --> create a folder/directory named telusko
+
+$ cd telusko  --> changing our current directory to telusko --> going inside that directory/folder
+
+$ pwd  --> to check my current folder/directory
+ 
+/home/ec2-user/telusko
+$ cd ..  --> to come out of directory/folder
+
+$ pwd
+/home/ec2-user 
+
+rmdir <directory-name>
+
+$ rmdir telusko  --> to delete empty directory named telusko which is empty
+
+$ rm -rf <directory-name>
+
+$ rm -rf aws  --> To delete a directory/folder which has files in it
+
+
+$ ls --> display files present in current working directory
+
+$ ls -l --> display files present in current working directory in alphabetical order (a-z) one below the other
+
+$ ls -lr --> display files present in current working directory in alphabetical reverse order(z-a) one below the other
+
+$ ls -lt  --> display files present in current working directory which latest on top 
+
+$ ls -ltr ---> display files present in current working directory with old file on top
+
+
+--------------------------------------------------------
+
+$ rm <file-name>
+
+$ rm alien.txt --> Delete file which is named as alien
+
+$ ls -l
+
+
+drwxr-xr-x. 2 ec2-user ec2-user 6 Jun  9 02:37 devops
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:33 java.txt
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 kubernetes.yml
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:22 ramu.txt
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 shellscript.sh
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:22 telusko.txt
+
+$ rm *.txt  --> delete every file of current directory with txt as extension
+
+$ ls -l
+
+total 0
+drwxr-xr-x. 2 ec2-user ec2-user 6 Jun  9 02:37 devops
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 kubernetes.yml
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 shellscript.sh
+
+$ rm a*.txt  --> delete all txt files which starts with a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

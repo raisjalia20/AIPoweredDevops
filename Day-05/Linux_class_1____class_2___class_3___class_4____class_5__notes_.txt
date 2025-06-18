@@ -1,0 +1,793 @@
+Linux Live Class Notes ==> Telusko (DevOps with AWS Course)
+===========================================================
+
+class 1 : 5th June (Thursday) 
+
+What is Infrastructure?
+Infrastructure refers to the essential resources and services required to run a company or a project. These include both hardware and software systems that support computing environments.
+
+Components of Infrastructure:
+==============================
+
+Servers – Physical or virtual machines that run applications.
+
+Database – Systems used to store and manage data (e.g., MySQL, PostgreSQL).
+
+Storage – Persistent data storage (e.g., disks, cloud buckets).
+
+Security – Firewalls, authentication, access control, etc.
+
+Monitoring – Tools to observe performance, errors, uptime (e.g., Prometheus, Grafana).
+
+Network – Connectivity infrastructure (LAN, VPN, cloud VPC, etc.).
+---------------------------------------------------------
+
+Types of Infrastructure:
+=========================
+
+On-Premise (Our Own Data Center)
+-----------------
+
+Hardware owned and managed by the organization.
+
+High control, but higher upfront costs and maintenance overhead.
+
+Cloud (Pay-As-You-Go Model)
+----------------------
+
+Infrastructure provided by cloud vendors (AWS, Azure, GCP, etc.).
+
+You pay only for what you use.
+
+Scalable, flexible, and lower maintenance.
+
+
+What is an Operating System (OS)?
+----------------------------------
+
+--> An Operating System (OS) is software that acts as a mediator between the user and the computer hardware.
+
+--> It allows users to interact with computers and run programs.
+
+--> Without an OS, we cannot use any computer system.
+
+--> It provides an environment (platform) for users to operate and manage hardware and software resources.
+
+🛠️ Examples of tasks enabled by an OS:
+Opening applications like Notepad, Calculator, Browsers, etc.
+
+Managing files, memory, and peripheral devices.
+
+🌐 Types of Operating Systems in the Market
+-----------------------------------------
+Common examples include:
+
+Windows
+
+Linux
+
+macOS
+
+Android
+
+iOS
+
+🪟 Windows Operating System
+----------------------------------
+
+Developed by Microsoft (Founded by Bill Gates)
+
+GUI-based (Graphical User Interface)
+
+Primarily a single-user OS
+
+Commercial OS – requires paid licenses
+
+Lower built-in security – anti-virus software is often necessary
+
+Best suited for personal or home use, such as:
+
+Playing games
+
+Watching movies
+
+Internet browsing
+
+Storing files
+
+Attending online classes
+
+❗ Note: Windows is not recommended for enterprise-level operations like application deployment or server hosting.
+-----------------------------------------------------------------
+🐧 Linux Operating System
+============================
+Community-developed, free, and open source
+
+Supports multi-user environments
+
+Offers high security
+
+CLI-based (Command Line Interface), though some distros have GUIs
+
+Highly recommended for:
+
+Servers
+
+Application deployment
+
+Infrastructure setup
+
+💡 In real-time IT environments, Linux is the OS of choice for infrastructure and DevOps operations.
+
+📜 History of Linux
+=======================
+Created by Linus Torvalds
+
+Initially used UNIX OS, but faced limitations and his feedback was not accepted
+
+He discovered Minix OS, which aligned more closely with his ideas
+
+Linus modified Minix and created Linux
+
+Name Origin:
+Lin(us) + Min(ux) = Linux
+========================
+
+🧬 Linux Distributions (Flavors)
+===================================
+
+After Linux was released as open source, many companies downloaded the source code and customized it to create their own versions, known as Linux Distributions.
+
+🔹 Popular Linux Distros:
+Amazon Linux
+
+Red Hat Enterprise Linux (RHEL)
+
+Ubuntu
+
+CentOS
+
+SUSE Linux
+
+There are over 200+ Linux distributions available today.
+
+✅ Summary
+What is an Operating System and why do we need it?
+
+Windows OS – GUI, single-user, commercial, for personal use
+
+Linux OS – CLI, multi-user, open source, secure, for enterprise use
+
+History of Linux – Linus Torvalds' journey from UNIX to Linux
+
+Linux Distributions – Various flavors developed from the base Linux kernel
+=================================================================================
+
+class 2 : 9th June (Monday) 
+
+Install Git bash
+ 
+https://git-scm.com/downloads
+
+Install Mobaxterm(Optional and only for windows)
+
+https://mobaxterm.mobatek.net/download-home-edition.html
+
+Create a free tier AWS account (Video uploaded in course dashboard follow)
+
+=========================================================================
+
+Linux Files System
+-------------------
+==> Everything is represented as a file
+
+     1) Directory File (Folder) (starts with d)
+     2) Normal file/ ordinary ( starts with -)
+     3) Link File ( starts with l)
+
+
+Linux Commands 
+==============
+$ clear  --> To clear the screen
+
+$ mkdir telusko  --> create a folder/directory named telusko
+
+$ cd telusko  --> changing our current directory to telusko --> going inside that directory/folder
+
+$ pwd  --> to check my current folder/directory
+ 
+/home/ec2-user/telusko
+$ cd ..  --> to come out of directory/folder
+
+$ pwd
+/home/ec2-user 
+
+rmdir <directory-name>
+
+$ rmdir telusko  --> to delete empty directory named telusko which is empty
+
+$ rm -rf <directory-name>
+
+$ rm -rf aws  --> To delete a directory/folder which has files in it
+
+-------------------------------------------------------
+$ ls --> display files present in current working directory
+
+$ ls -l --> display files present in current working directory in alphabetical order (a-z) one below the other
+
+$ ls -lr --> display files present in current working directory in alphabetical reverse order(z-a) one below the other
+
+$ ls -lt  --> display files present in current working directory which latest on top 
+
+$ ls -ltr ---> display files present in current working directory with old file on top
+
+
+--------------------------------------------------------
+
+$ rm <file-name>
+
+$ rm alien.txt --> Delete file which is named as alien
+
+$ ls -l
+
+
+drwxr-xr-x. 2 ec2-user ec2-user 6 Jun  9 02:37 devops
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:33 java.txt
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 kubernetes.yml
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:22 ramu.txt
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 shellscript.sh
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:22 telusko.txt
+
+$ rm *.txt  --> delete every file of current directory with txt as extension
+
+$ ls -l
+
+total 0
+drwxr-xr-x. 2 ec2-user ec2-user 6 Jun  9 02:37 devops
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 kubernetes.yml
+-rw-r--r--. 1 ec2-user ec2-user 0 Jun  9 02:37 shellscript.sh
+
+$ rm a*.txt  --> delete all txt files which starts with a
+
+================================================================================
+class 3 : 10th June (Tuesday)
+
+mv : To Move and To Rename 
+
+$ mv <current-location> <new-location>  --> changing location
+
+$ mv <current-name <new-name> --> renaming the file
+
+--------------------------
+$ cat <file-name> 
+$ cat aws.txt ---> It will display data/content of that file
+
+$ cat > telusko.txt ----> It will create a file and allow us to add data/content ( use cntl+D to come out of edit mode)
+
+$ cat >> <file-name>
+$ cat >> f1.txt --> append data/content in existing file
+
+$ cat -n f1.txt ---> Display data with numbering
+
+$ tac file.txt ---> display/print the content from bottom to top 
+
+$ rev file.txt --> reverse each line and each word of that line
+--------------------------------------
+
+Copy Data : cp
+---------
+$ cp alien.txt telusko.txt --> alien file data will be added in telusko file ( If there is content/data in telusko thn that will be replaced by new content coming from alien.txt file)
+
+Copy multiple files data into another file
+--------------------------------------
+cat alien.txt aws.txt > f2.txt    ---> content of alien and aws file will be added into f2 file
+
+$ head f1.txt
+$ tail f1.txt    
+
+ Both will print content of files like cat if content is less then 10 lines
+
+head --> prints/display first 10 lines of the file
+
+tail  -->  prints/display last 10 lines of the fil
+
+$ head -n 5 f1.txt ---> prints / displays first 5 lines of that file 
+
+$ head -n 10.txt ---> prints / displays first 10 lines of that file 
+
+$ tail -n 5 f1.txt ---> prints / display last 5 lines of the file 
+
+$ history
+    1  clear
+    2  date
+    3  whoami
+    4  pwd
+    5  whoami
+    6  pwd
+    7  date
+    8  clear
+    9  whoami
+   10  pwd
+   11  mkdir telusko
+   12  cd telusko
+   13  pwd
+   14  cd ..
+   15  pwd
+   16  ls -l
+   17  rmdir telusko
+   18  ls -l
+   19  ls
+   20  clear
+   21  touch alien.txt
+   22  ls
+   23  touch telusko.txt
+   24  touch ramu.txt
+   25  ls
+   26  ls -l
+   27  mkdir aws
+   28  cd aws
+   29  touch f1.txt f2.txt f3.txt
+   30  ls
+   31  ls -l
+   32  cd ..
+   33  ls -l
+   34  ls -lr
+   35  ls -lt
+   36  ls -ltr
+   37  clear
+   38  ls -l
+   39  rm aws
+   40  rmdir aws
+   41  rm -rf aws
+   42  ls -l
+   43  clear
+   44  touch java.txt
+   45  mkdir python
+   46  ls -l
+   47  cd python
+   48  pwd
+   49  cd ..
+   50  rmdir python
+   51  clear
+   52  ls
+   53  clear
+   54  ls -l
+   55  rm alien.txt
+   56  ls -l
+   57  mkdir devops
+   58  touch kubernetes.yml
+   59  touch shellscript.sh
+   60  ls -l
+   61  rm *.txt
+   62  ls -l
+   63  clear
+   64  touch alien.txt
+   65  touch abc.txt
+   66  touch alpha.txt
+   67  touch f1.txt f2.txt f3.txt
+   68  ls -l
+   69  rm a*.txt
+   70  ls -l
+   71  clear
+   72  ls -l
+   73  rmdir devops
+   74  rm *.txt
+   75  ls -l
+   76  rm kubernetes.yml
+   77  rm shellscript.sh
+   78  ls -l
+   79  clear
+   80  ls -l
+   81  clear
+   82  ls -l
+   83  clear
+   84  ls -l
+   85  ls
+   86  clear
+   87  touch alien.txt
+   88  touch f1.txt f2.txt
+   89  touch aws.txt
+   90  touch devops.txt
+   91  touch manifest.yml
+   92  ls -l
+   93  mkdir linux
+   94  ls -l
+   95  clear
+   96  ls -l
+   97  mv manifest.yml k8s-manifest.yml
+   98  ls -l
+   99  mv alien.txt telusko.txt
+  100  ls -l
+  101  clear
+  102  ls -l
+  103  mv devops.txt linux
+  104  ls -l
+  105  pwd
+  106  cd linux
+  107  ls -l
+  108  cd ..
+  109  clear
+  110  ls
+  111  cd linux
+  112  ls
+  113  pwd
+  114  cd ..
+  115  pwd
+  116  ls -l
+  117  clear
+  118  ls
+  119  cat telusko.txt
+  120  cat alien.txt
+  121  cat > alien.txt
+  122  cat alien.txt
+  123  clear
+  124  ls -l
+  125  cat >> aws.txt
+  126  cat alien.txt
+  127  cat aws.txt
+  128  clear
+  129  ls
+  130  cat -n aws.txt
+  131  cat aws.txt
+  132  tac aws.txt
+  133  rev aws.txt
+  134  clear
+  135  ls -l
+  136  cat alien.txt
+  137  cat aws.txt
+  138  clear
+  139  ls -l
+  140  cat telusko.txt
+  141  cp alien.txt telusko.txt
+  142  cat telusko.txt
+  143  cp aws.txt telusko.txt
+  144  cat telusko.txt
+  145  clear
+  146  ls
+  147  cat alien.txt aws.txt > f1.txt
+  148  cat f1.txt
+  149  ls
+  150  clear
+  151  cat f1.txt
+  152  clear
+  153  cat -n f1.txt
+  154  head -n 4 f1.txt
+  155  head f1.txt
+  156  tail f1.txt
+  157  tail -n 4 f1.txt
+  158  clear
+  159  history
+==============================================================================================
+ history --> command will display all commands which we have used in a particular VM
+
+----------------------------------------------------
+grep
+====
+
+grep stands for Global Regular Expression Print
+
+It's a command-line utility in Linux used to search for patterns in text using regular expression. It prints the matching lines
+
+$ cat f1.txt
+
+Linux Learning classes and it looks linux is not so hard also
+After Linux we shall learn Bash Shell Scripting
+AWS is most used cloud provider
+AWS is very wide and has many resources or services
+We will learn AWS after the Shell Scripting
+AFter AWS we shall start with Terraform and Ansible
+
+$ grep 'aws' f1.txt  --> It will print the lines which has aws by considering case sensitivity
+
+$ grep -i 'aws' f1.txt  --> It will print the lines which has aws by ignoring case sensitivity
+
+AWS is most used cloud provider
+AWS is very wide and has many resources or services
+We will learn AWS after the Shell Scripting
+AFter AWS we shall start with Terraform and Ansible
+
+
+$ grep -n 'AWS' f1.txt --> It will print the lines which has aws along side line number
+
+3:AWS is most used cloud provider
+4:AWS is very wide and has many resources or services
+5:We will learn AWS after the Shell Scripting
+6:AFter AWS we shall start with Terraform and Ansible
+
+
+$ grep -v 'AWS' f1.txt --> It will print the lines which does not has aws in it
+
+
+Linux Learning classes and it looks linux is not so hard also
+After Linux we shall learn Bash Shell Scripting
+
+
+$ grep -i 'AWS' *  --> search for aws keyword in all files of pwd
+
+aws.txt:AWS is most used cloud provider
+aws.txt:AWS is very wide and has many resources or services
+aws.txt:We will learn AWS after the Shell Scripting
+aws.txt:AFter AWS we shall start with Terraform and Ansible
+f1.txt:AWS is most used cloud provider
+f1.txt:AWS is very wide and has many resources or services
+f1.txt:We will learn AWS after the Shell Scripting
+f1.txt:AFter AWS we shall start with Terraform and Ansible
+grep: linux: Is a directory
+telusko.txt:AWS is most used cloud provider
+telusko.txt:AWS is very wide and has many resources or services
+telusko.txt:We will learn AWS after the Shell Scripting
+telusko.txt:AFter AWS we shall start with Terraform and Ansible
+
+============================================================================
+grep -i "warning" app.log
+🔹 Finds "Warning", "WARNING", "wArNiNg", etc., in app.log.
+
+Count the number of matches
+
+grep -c "Exception" error.log
+🔹 Outputs how many lines contain "Exception" in error.log.
+
+Show line numbers with matches
+
+grep -n "Database" db.log
+🔹 Shows lines with "Database" along with their line numbers.
+
+Search for an exact word match
+
+grep -w "fail" results.txt
+🔹 Matches only the word fail, not failed or failing.
+
+=================================================================================
+class 4 11th June (Wednesday)
+-----------------------------
+
+$ diff aws.txt f1.txt   --> To See diff between these 2 files (aws and f1) are file names
+
+$ wc aws.txt  --> Word count command
+
+  4  33 180 aws.txt  --> ( no of lines, no of words , no of characters)
+
+tac, cp, cat, head, tail, grep, wc, diff
+
+
+========================================
+Text Editors in Linux 
+-------------------
+
+--> vi (visual editor)  --> it is a default editor in Linux machines
+
+--> Using 'vi' we can create new files and we can modify existing file data
+
+--> vi command is having 3 modes
+   1) command mode ( we can just open file and navigate or see the content, we cannot edit or modify or add content in this mode)
+    
+    $ vi <filename> 
+    
+    $ vi devops.txt  ( if a file by the name devops is available thn it will open that existing file if not it will create a new file)
+
+
+   2) insert mode ( to edit that file or to add the content into the file) press i in the keyboard to get into insert mode
+
+
+   3) esc mode ( to come out of insert mode) press esc in keyboard 
+     
+      --> To Save the changes we have made in the file and close the file --> :wq
+      --> To close the file without saving changes --> :q!
+
+File Creation in Linux 
+---------------------
+touch --> To Create an empty file
+
+cat --> To create file with data without opening any editor ( cat can be used to view and for copy too please refer to nodes above)
+
+cp --> Copy one file data into another file ( cp aws.txt devops.txt)
+
+vi --> create and open file for editing (vi f.txt)
+
+
+Reading Data from a file 
+------------------------
+vi --> open the file and we could able to see and navigate over content in command mode
+
+cat --> print/display the file data from top to bottom as it is present in the file
+
+tac --> print/display the data from bottom to top 
+
+rev --> prints/display data in reverse order
+
+head --> prints/display first 10 lines of the file
+
+tail  -->  prints/display last 10 lines of the file
+
+SED  command
+========================
+
+--> SED -> stream editor
+
+--> SED is used to process the data ( substitute , delete, insert ...)
+
+--> SED is a very powerful command in Linux using which we can perform operations on the file without opening it
+
+$ sed 's/Azure/Aws/' aws.txt
+
+Replace first occurance of 'Azure' with 'AWS' in  file  ( Azure and AWS are words here in the file) without saving changes in original file
+
+--------------
+
+$ sed -i 's/Azure/Aws/' aws.txt
+
+Replace first occurance of 'Azure' with 'AWS' in  file and save changes in original file
+
+--------------
+
+$ sed -i 's/Aws/Azure/g' aws.txt
+
+Replace all  occurance of 'Aws' with 'Azure' in  file and save changes in original file
+
+--------------
+$ sed -i '3d' aws.txt
+
+Delete 3rd line of aws.txt file
+
+-------------
+$ sed -i '$d' aws.txt
+Delete last tile of aws.txt file
+
+------------
+
+$ sed '/AWS/d' f1.txt
+
+Delete all lines which contains AWS in f1.txt file
+-----------------------------
+$ sed -n '3,11p' f1.txt
+
+Print the data from f1.txt file from line 3 to 11
+
+--------------------------------
+$ sed '11i\ ai tool for shell scripting' f1.txt
+
+Insert data "ai tool for shell scripting" before 11th line in f1.txt
+
+-------------------
+
+$ sed -i '11i\ ai tool for shell scripting' f1.txt
+Insert data "ai tool for shell scripting" before 11th line in f1.txt and save that changes into the file
+
+-------------------
+
+$ sed '$a\I am loving linux' f1.txt
+
+Add the data after the last line
+============================================================
+class 5 12th June(Thursday)
+---------------------------
+
+User Accounts
+--------------
+
+--> Linux is a multi user based OS  --> One Linux Machine can create multiple user accounts and multiple users can perform multi tasking
+
+'ec2-user' is a default user in amazon Linux VM
+
+--> Add new user
+$ sudo useradd Pavan
+
+--> Add password for that new user
+$ sudo passwd Pavan
+
+Changing password for user Pavan.
+New password:
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password:
+passwd: all authentication tokens updated successfully.
+
+--> display users created 
+$ cat /etc/passwd
+
+--> switch user
+$ whoami
+ec2-user
+$ sudo su Pavan
+
+$ pwd
+/home/ec2-user
+
+--> Go to users home directory
+[Pavan@ip-172-31-0-108 ec2-user]$ cd ~
+
+$ pwd
+/home/Pavan
+
+
+---> You need to be ec2-user to make all these changes 
+(get connected to same machine as ec2 -user to perform the following operation or execute $ exit command to come backto ec2-user)
+
+--> Delete user
+$ sudo userdel Pavan
+
+--> Delete user along with user home directory
+$ sudo userdel Pavan --remove
+
+After deleting We we try to switch back to Pavan
+$ sudo su Pavan
+su: user Pavan does not exist or the user entry does not contain all the required fields
+
+--> Changing username 
+
+$ sudo usermod -l <newname> <oldname>
+$ sudo usermod -l kamleshkumar kamlesh
+
+
+User Groups
+---------------
+
+When we create user in Linux, for every user one group also be created with a given username
+--> Create new group
+$ sudo groupadd <groupname>
+
+$ sudo group telusko
+
+
+--> Adding user to a group
+
+$ sudo usermod -aG <groupname> <username>
+
+$ sudo usermod -aG telusko vazra
+
+--> Display users in a group
+
+$ sudo lid -g <groupname> 
+$ sudo lid -g telusko
+ vazra(uid=1003)
+
+--> diplay user belong to which group
+$ id vazra
+uid=1003(vazra) gid=1003(vazra) groups=1003(vazra),1004(telusko)
+
+
+$ id faheem
+uid=1002(faheem) gid=1002(faheem) groups=1002(faheem)
+
+
+$ id kamleshkumar
+uid=1001(kamleshkumar) gid=1001(kamlesh) groups=1001(kamlesh)
+
+$ sudo usermod -aG telusko kamleshkumar
+
+$ sudo lid -g telusko
+ vazra(uid=1003)
+ kamleshkumar(uid=1001)
+
+--> Removing user from a group
+$ sudo gpasswd -d vazra telusko
+Removing user vazra from group telusko
+
+--> Changing group name 
+
+$ sudo groupmod -n <newname> <oldname>
+
+--> Delete the group
+$ sudo groupdel <groupname>
+$ sudo groupdel teluskoai
+
+===================================================
+sudoers file in Linux
+--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
